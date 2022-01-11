@@ -1,15 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 import get from './service';
-import { HOT_TOURIST_DESTINATION, ADVENTURING_TIME, ALL_ADVANCEMENTS } from './utils';
-import HotTouristDestination from './components/HotTouristDestination';
+import { ALL_ADVANCEMENTS } from './utils';
+import AdvancementList from './components/AdvancementList';
 
 function App() {
   const [completedAdvancements
     , setCompletedAdvancements] = useState({})
   const [userAdvancements, setUserAdvancements] = useState(null)
-  const [missingAdvancements, setMissingAdvancements] = useState(null)
+  const [progressInAdvancements, setProgressInAdvancements] = useState(null)
 
   useEffect(async () => {
     const advancements = await getCompletedAchievements()
@@ -39,31 +38,39 @@ function App() {
     fileReader.readAsText(userFile)
     fileReader.onload = () => {
       const uploadedAdvancements = JSON.parse(fileReader.result)
-      setUserAdvancements(uploadedAdvancements)
+      const uploadedAndRemovedAdvancements = removeUnusedAdvancements(uploadedAdvancements)
+      setUserAdvancements(uploadedAndRemovedAdvancements)
     }
     fileReader.onerror = () => {
       console.error('error parsing!')
     }
   }
 
-  useEffect(() => {
-    if (userAdvancements != null)
-      getMissing()
-  }, [userAdvancements])
-
-  function getMissing() {
-    const missing = {}
-    for (const advancement in ALL_ADVANCEMENTS) {
-      const advancementName = ALL_ADVANCEMENTS[advancement]
-      const userProgressInAdvancement = userAdvancements[advancementName].criteria
-      missing[advancement] = getMissingFromAdvancement(advancementName, userProgressInAdvancement)
-    }
-    setMissingAdvancements(missing)
+  function removeUnusedAdvancements(uploadedAdvancements) {
+    const cleanAdvacements = {}
+    ALL_ADVANCEMENTS.forEach(advancement => {
+      cleanAdvacements[advancement] = uploadedAdvancements[advancement].criteria
+    })
+    return cleanAdvacements
   }
 
-  function getMissingFromAdvancement(advancementName, progress) {
+  useEffect(() => {
+    if (userAdvancements != null)
+      getMissingAdvancements()
+  }, [userAdvancements])
+
+  function getMissingAdvancements() {
+    const missing = {}
+    ALL_ADVANCEMENTS.forEach((advancement) => {
+      const userProgressInAdvancement = userAdvancements[advancement]
+      missing[advancement] = getMissingFromAdvancement(advancement, userProgressInAdvancement)
+    })
+    setProgressInAdvancements(missing)
+  }
+
+  function getMissingFromAdvancement(advancement, progress) {
     const missing = []
-    for (const name in completedAdvancements[advancementName].criteria) {
+    for (const name in completedAdvancements[advancement].criteria) {
       if (!(name in progress)) {
         missing.push(name)
       }
@@ -73,23 +80,12 @@ function App() {
 
   return (
     < div className="App" >
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div>
-          <input type="file"
-            onChange={fileChange}
-          />
-        </div>
-        {missingAdvancements == null ?
-          <div>
-
-          </div>
-          :
-          <div>
-            <HotTouristDestination
-              missingBiomes={missingAdvancements.HOT_TOURIST_DESTINATION} />
-          </div>}
-      </header>
+      <div>
+        <input type="file"
+          onChange={fileChange}
+        />
+      </div>
+      <AdvancementList progressInAdvancements={progressInAdvancements} />
     </div >
   );
 }
