@@ -1,8 +1,11 @@
 import './App.css';
+import './styles/file_reader.css'
 import { useEffect, useState } from 'react';
 import get from './service';
 import { ALL_ADVANCEMENTS } from './utils';
 import AdvancementList from './components/AdvancementList';
+import About from './components/About';
+import FileInfo from './components/FileInfo'
 
 function App() {
   const [completedAdvancements
@@ -79,13 +82,21 @@ function App() {
   }
 
   return (
-    < div className="App" >
-      <div>
-        <input type="file"
-          onChange={fileChange}
-        />
+    < div>
+      <div className='panel'>
+        <About />
       </div>
-      <AdvancementList progressInAdvancements={progressInAdvancements} />
+
+      <div className='panel'>
+        <FileInfo />
+        <div className='file-reader'>
+          <input type="file"
+            onChange={fileChange}
+            className='input-file'
+          />
+        </div>
+        <AdvancementList progressInAdvancements={progressInAdvancements} />
+      </div>
     </div >
   );
 }

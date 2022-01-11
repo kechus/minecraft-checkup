@@ -1,0 +1,10 @@
+.file-reader {
+  border-style: dotted;
+  border-color: lavenderblush;
+
+  height: 7vh;
+}
+
+.input-file {
+  width: 100%;
+}

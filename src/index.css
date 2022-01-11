@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background-image: url('https://static.planetminecraft.com/files/resource_media/screenshot/1307/2013-02-14_114038_4837850_lrg.jpg');
 }
 
 code {

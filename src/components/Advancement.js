@@ -8,12 +8,13 @@ const Advancement = (props) => {
   useEffect(() => {
     setMissingProgress(props.missingProgress)
     setTitle(props.title)
-  }, []);
+  }, [props]);
 
   return (
     <div>
+      <hr></hr>
       {title}
-      {missingProgress.length == 0 ? <CompletedAchievement /> :
+      {missingProgress.length === 0 ? <CompletedAchievement /> :
         <div>
           <ul>
             {
