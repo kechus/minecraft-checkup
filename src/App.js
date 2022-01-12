@@ -1,11 +1,11 @@
 import './App.css';
-import './styles/file_reader.css'
 import { useEffect, useState } from 'react';
 import get from './service';
 import { ALL_ADVANCEMENTS } from './utils';
 import AdvancementList from './components/AdvancementList';
 import About from './components/About';
 import FileInfo from './components/FileInfo'
+import Footer from './components/Footer';
 
 function App() {
   const [completedAdvancements, setCompletedAdvancements] = useState({})
@@ -100,6 +100,10 @@ function App() {
           />
         </div>
         <AdvancementList missingProgressInAdvancements={missingProgressInAdvancements} />
+      </div>
+
+      <div className='panel'>
+        <Footer />
       </div>
     </div >
   );

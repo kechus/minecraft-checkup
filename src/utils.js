@@ -34,7 +34,7 @@ const ADVANCEMENTS_NAMES = {
   "minecraft:husbandry/bred_all_animals": new Advancement(
     'Two By Two', '-160px -3136px', IMAGE_PATHS.ENTITIES, '/jsons/twoby.json'),
   "minecraft:husbandry/complete_catalogue": new Advancement(
-    'A complete Catalogue', '-96px -2496px', IMAGE_PATHS.ENTITIES, '/jsons/complete.json'),
+    'A complete Catalogue', '-896px -1664px', IMAGE_PATHS.ENTITIES, '/jsons/complete.json'),
   "minecraft:nether/explore_nether": new Advancement(
     'Hot Tourist Destination', '-416px -128px', IMAGE_PATHS.BIOMES, '/jsons/hot.json'),
 }

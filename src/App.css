@@ -9,3 +9,26 @@
   border-color: lavenderblush;
   padding: 1em 1em 1em 1em;
 }
+
+.file-reader {
+  margin-top: 1%;
+  border-style: dotted;
+  border-color: lavenderblush;
+}
+
+.input-file {
+  width: 100%;
+}
+
+.title {
+  font-size: larger;
+  font-weight: 700;
+}
+
+.code-like {
+  font-style: italic;
+}
+
+.smaller {
+  font-size: small;
+}

@@ -1,7 +1,10 @@
 const CompletedAdvancement = () => {
   return (
-    <div>
-      You did it!
+    <div style={{
+      paddingTop: "1%",
+      paddingLeft: "3%",
+    }}>
+      Congratulations, you have already completed this advacement!
     </div>
   );
 }
