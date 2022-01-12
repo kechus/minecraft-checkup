@@ -126,5 +126,37 @@
   "carrot": {
     "name": "Carrot",
     "positions": "-160px -480px"
+  },
+  "chicken":{
+    "name": "Raw Chicken",
+    "positions" : "-80px -480px"
+  },
+  "beef":{
+    "name": "Raw Beef",
+    "positions" : "-176px -480px"
+  },
+  "cod":{
+    "name": "Raw Cod",
+    "positions" : "-240px -320px"
+  },
+  "mutton":{
+    "name": "Raw Mutton",
+    "positions" : "-160px -496px"
+  },
+  "porkchop":{
+    "name": "Raw Porkchop",
+    "positions" : "-208px -496px"
+  },
+  "rabbit":{
+    "name": "Raw Rabbit",
+    "positions" : "-0px -512px"
+  },
+  "salmon":{
+    "name": "Raw Salmon",
+    "positions" : "-192px -336px"
+  },
+  "cooked_beef":{
+    "name": "Steak",
+    "positions" : "-208px -480px"
   }
 }

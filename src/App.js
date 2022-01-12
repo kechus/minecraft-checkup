@@ -52,7 +52,11 @@ function App() {
   function removeUnusedAdvancements(uploadedAdvancements) {
     const cleanAdvacements = {}
     ALL_ADVANCEMENTS.forEach(advancement => {
-      cleanAdvacements[advancement] = uploadedAdvancements[advancement].criteria
+      if (uploadedAdvancements[advancement] === undefined) {
+        cleanAdvacements[advancement] = []
+      } else {
+        cleanAdvacements[advancement] = uploadedAdvancements[advancement].criteria
+      }
     })
     return cleanAdvacements
   }

@@ -38,5 +38,9 @@
   "textures/entity/cat/calico.png": {
     "name": "Calico",
     "positions": "-128px -176px"
+  },
+  "textures/entity/cat/all_black.png":{
+    "name":"Tuxedo",
+    "positions":"-96px -448px"
   }
 }
