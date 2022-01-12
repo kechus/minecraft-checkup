@@ -1,62 +1,46 @@
 import { useState, useEffect } from "react";
-import { ADVANCEMENTS_NAMES } from "../utils";
 import CompletedAchievement from './CompletedAdvancement'
 import AdvancementHeader from "./AdvancementHeader";
 import get from "../service";
+import SingleCriteria from "./SingleCriteria";
 
 
 const Advancement = (props) => {
-  const [missingProgress, setMissingProgress] = useState([])
-  const [title, setTitle] = useState('')
+  const [missingCriteriaPoints, setMissingCriteriaPoint] = useState(props.missingCriteriaPoints.sort())
+  const [advancementObj, setAdvancementObj] = useState(props.advancementObj)
   const [criteria, setCriteria] = useState(null)
 
   useEffect(() => {
-    setMissingProgress(props.missingProgress)
-    setTitle(props.title)
+    setMissingCriteriaPoint(props.missingCriteriaPoints.sort())
+    setAdvancementObj(props.advancementObj)
   }, [props]);
 
   useEffect(() => {
     const fetchAdvancementCriteria = async () => {
-      const criteria = await get(ADVANCEMENTS_NAMES[title].jsonPath)
+      const criteria = await get(advancementObj.jsonPath)
       setCriteria(criteria)
     }
-    if (title !== '') {
-      fetchAdvancementCriteria()
-    }
-  }, [title])
+    fetchAdvancementCriteria()
+  }, [advancementObj])
 
-  return (
+  return criteria === null ? '' :
     <div>
       <hr></hr>
-      {criteria === null ? '' :
-        <div>
-          <AdvancementHeader advancement={ADVANCEMENTS_NAMES[title]} />
+      <AdvancementHeader advancementObj={advancementObj} />
 
-          {missingProgress.length === 0 ? <CompletedAchievement /> :
-            <div>
-              <ul>
-                {
-                  missingProgress.map((advancement, key) => {
-                    return <li key={key}>
-                      {/* {criteria[advancement] === undefined ? 'nota' : criteria[advancement].name} */}
-                      <div style={{
-                        backgroundImage: `url('${ADVANCEMENTS_NAMES[title].albumPath}')`,
-                        backgroundPosition: criteria[advancement].positions,
-                        width: '16px',
-                        height: '16px',
-                        display: 'inline-block',
-                        marginRight: '1%',
-                      }}></div>
-                      {criteria[advancement].name}
-                    </li>
-                  })
-                }
-              </ul>
-            </div>}
-        </div>
-      }
+      {missingCriteriaPoints.length === 0 ? <CompletedAchievement /> :
+        <ul>
+          {
+            missingCriteriaPoints.map((criteriaPoint, key) => {
+              return <SingleCriteria key={key}
+                criteriaValues={criteria[criteriaPoint]}
+                imagePath={advancementObj.albumPath}
+              />
+            })
+          }
+        </ul>}
     </div>
-  );
+
 }
 
 export default Advancement;

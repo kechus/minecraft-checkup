@@ -1,26 +1,32 @@
 import { useEffect, useState } from "react";
 import Advancement from "./Advancement";
+import { ADVANCEMENTS_NAMES } from "../utils";
 
 const AdvancementList = (props) => {
-  const [progressInAdvancements, setProgressInAdvancements] = useState(null)
+  const [
+    missingProgressInAdvancements,
+    setMissingProgressInAdvancements
+  ] = useState(props.missingProgressInAdvancements)
   const [advancements, setAdvancements] = useState([])
 
   useEffect(() => {
-    setProgressInAdvancements(props.progressInAdvancements)
+    setMissingProgressInAdvancements(props.missingProgressInAdvancements)
   }, [props])
 
   useEffect(() => {
-    if (progressInAdvancements != null) {
+    function createAdvancementsList() {
       const advancements = []
-      for (const advancementName in progressInAdvancements) {
-        advancements.push(
-          <Advancement missingProgress={progressInAdvancements[advancementName]} title={advancementName} />
-        )
+      for (const advancementName in missingProgressInAdvancements) {
+        const advancement = <Advancement
+          missingCriteriaPoints={missingProgressInAdvancements[advancementName]}
+          advancementObj={ADVANCEMENTS_NAMES[advancementName]} />
+        advancements.push(advancement)
       }
       setAdvancements(advancements)
     }
 
-  }, [progressInAdvancements])
+    createAdvancementsList()
+  }, [missingProgressInAdvancements])
 
   return (
     <div>

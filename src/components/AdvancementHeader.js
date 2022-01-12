@@ -15,16 +15,16 @@ const container = {
 }
 
 const AdvancementHeader = (props) => {
-  const [advancement, setAdvancement] = useState(null)
+  const [advancementObj, setAdvancementObj] = useState(props.advancementObj)
 
   useEffect(() => {
-    setAdvancement(props.advancement)
+    setAdvancementObj(props.advancementObj)
   }, [props])
 
   function createTrophy() {
     return {
       backgroundImage: `url('${IMAGE_PATHS.INV}')`,
-      backgroundPosition: advancement.imagePosition,
+      backgroundPosition: advancementObj.imagePosition,
       width: '32px',
       height: '32px',
       position: 'absolute',
@@ -33,7 +33,7 @@ const AdvancementHeader = (props) => {
     }
   }
 
-  return advancement === null ? '' :
+  return (
     <div style={container}>
       <div style={trophyHolder}>
         <div
@@ -41,9 +41,11 @@ const AdvancementHeader = (props) => {
         ></div>
       </div>
       {
-        advancement.name
+        advancementObj.name
       }
     </div>
+  )
+
 }
 
 export default AdvancementHeader;

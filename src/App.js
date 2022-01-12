@@ -8,20 +8,20 @@ import About from './components/About';
 import FileInfo from './components/FileInfo'
 
 function App() {
-  const [completedAdvancements
-    , setCompletedAdvancements] = useState({})
+  const [completedAdvancements, setCompletedAdvancements] = useState({})
   const [userAdvancements, setUserAdvancements] = useState(null)
-  const [progressInAdvancements, setProgressInAdvancements] = useState(null)
+  const [
+    missingProgressInAdvancements,
+    setMissingProgressInAdvancements
+  ] = useState(null)
 
-  useEffect(async () => {
-    const advancements = await getCompletedAchievements()
-    setCompletedAdvancements(advancements)
+  useEffect(() => {
+    async function getCompletedAdvancements() {
+      const advancements = await get('completed.json')
+      setCompletedAdvancements(advancements)
+    }
+    getCompletedAdvancements()
   }, [])
-
-  async function getCompletedAchievements() {
-    const achievements = await get('completed.json')
-    return achievements
-  }
 
   const fileChange = (event) => {
     const file = event.target.files[0]
@@ -51,39 +51,39 @@ function App() {
 
   function removeUnusedAdvancements(uploadedAdvancements) {
     const cleanAdvacements = {}
-    ALL_ADVANCEMENTS.forEach(advancement => {
-      if (uploadedAdvancements[advancement] === undefined) {
-        cleanAdvacements[advancement] = []
+    ALL_ADVANCEMENTS.forEach(advancementName => {
+      if (uploadedAdvancements[advancementName] === undefined) {
+        cleanAdvacements[advancementName] = {}
       } else {
-        cleanAdvacements[advancement] = uploadedAdvancements[advancement].criteria
+        cleanAdvacements[advancementName] = uploadedAdvancements[advancementName].criteria
       }
     })
     return cleanAdvacements
   }
 
   useEffect(() => {
+    function getMissingAdvancements() {
+      const missing = {}
+      ALL_ADVANCEMENTS.forEach((advancementName) => {
+        const userProgressInAdvancement = userAdvancements[advancementName]
+        missing[advancementName] = getMissingFromAdvancement(advancementName, userProgressInAdvancement)
+      })
+      setMissingProgressInAdvancements(missing)
+    }
+
+    function getMissingFromAdvancement(advancementName, progress) {
+      const missing = []
+      for (const name in completedAdvancements[advancementName].criteria) {
+        if (!(name in progress)) {
+          missing.push(name)
+        }
+      }
+      return missing
+    }
+
     if (userAdvancements != null)
       getMissingAdvancements()
-  }, [userAdvancements])
-
-  function getMissingAdvancements() {
-    const missing = {}
-    ALL_ADVANCEMENTS.forEach((advancement) => {
-      const userProgressInAdvancement = userAdvancements[advancement]
-      missing[advancement] = getMissingFromAdvancement(advancement, userProgressInAdvancement)
-    })
-    setProgressInAdvancements(missing)
-  }
-
-  function getMissingFromAdvancement(advancement, progress) {
-    const missing = []
-    for (const name in completedAdvancements[advancement].criteria) {
-      if (!(name in progress)) {
-        missing.push(name)
-      }
-    }
-    return missing
-  }
+  }, [userAdvancements, completedAdvancements])
 
   return (
     < div>
@@ -99,7 +99,7 @@ function App() {
             className='input-file'
           />
         </div>
-        <AdvancementList progressInAdvancements={progressInAdvancements} />
+        <AdvancementList missingProgressInAdvancements={missingProgressInAdvancements} />
       </div>
     </div >
   );
