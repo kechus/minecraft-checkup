@@ -1,0 +1,22 @@
+{
+  "minecraft:crimson_forest": {
+    "name": "Crimson Forest",
+    "positions": "-112px -144px"
+  },
+  "minecraft:nether_wastes": {
+    "name": "Nether Wastes",
+    "positions": "-16px -16px"
+  },
+  "minecraft:soul_sand_valley": {
+    "name": "Soul Sand Valley",
+    "positions": "-16px -160px"
+  },
+  "minecraft:warped_forest": {
+    "name": "Warped Forest",
+    "positions": "-0px -160px"
+  },
+  "minecraft:basalt_deltas": {
+    "name": "Basalt Deltas",
+    "positions": "-32px -160px"
+  }
+}

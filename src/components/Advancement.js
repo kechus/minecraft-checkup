@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { ADVANCEMENTS_NAMES } from "../utils";
 import CompletedAchievement from './CompletedAdvancement'
+import AdvancementHeader from "./AdvancementHeader";
 
 const Advancement = (props) => {
   const [missingProgress, setMissingProgress] = useState([])
@@ -10,20 +12,31 @@ const Advancement = (props) => {
     setTitle(props.title)
   }, [props]);
 
+  const isMountRef = useRef(true);
+  useEffect(() => {
+    isMountRef.current = false;
+  }, []);
+
+
   return (
     <div>
       <hr></hr>
-      {title}
-      {missingProgress.length === 0 ? <CompletedAchievement /> :
+      {isMountRef.current ? '' :
         <div>
-          <ul>
-            {
-              missingProgress.map((advancement, key) => {
-                return <li key={key}> {advancement}</li>
-              })
-            }
-          </ul>
-        </div>}
+          <AdvancementHeader advancement={ADVANCEMENTS_NAMES[title]} />
+
+          {missingProgress.length === 0 ? <CompletedAchievement /> :
+            <div>
+              <ul>
+                {
+                  missingProgress.map((advancement, key) => {
+                    return <li key={key}> {advancement}</li>
+                  })
+                }
+              </ul>
+            </div>}
+        </div>
+      }
     </div>
   );
 }

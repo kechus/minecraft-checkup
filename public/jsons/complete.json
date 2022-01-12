@@ -1,0 +1,42 @@
+{
+  "textures/entity/cat/tabby.png": {
+    "name": "Tabby",
+    "positions": "-16px -192px"
+  },
+  "textures/entity/cat/white.png": {
+    "name": "White",
+    "positions": "-32px -192px"
+  },
+  "textures/entity/cat/black.png": {
+    "name": "Black",
+    "positions": "-96px -176px"
+  },
+  "textures/entity/cat/jellie.png": {
+    "name": "Jellie",
+    "positions": "-144px -176px"
+  },
+  "textures/entity/cat/siamese.png": {
+    "name": "Siamese",
+    "positions": "-160px -448px"
+  },
+  "textures/entity/cat/ragdoll.png": {
+    "name": "Ragdoll",
+    "positions": "-0px -192px"
+  },
+  "textures/entity/cat/british_shorthair.png": {
+    "name": "British Shorthair",
+    "positions": "-112px -176px"
+  },
+  "textures/entity/cat/persian.png": {
+    "name": "Persian",
+    "positions": "-160px -176px"
+  },
+  "textures/entity/cat/red.png": {
+    "name": "Red",
+    "positions": "-32px -48px"
+  },
+  "textures/entity/cat/calico.png": {
+    "name": "Calico",
+    "positions": "-128px -176px"
+  }
+}

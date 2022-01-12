@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import BlankList from './BlankList'
-import Achievment from "./Advancement";
+import Advancement from "./Advancement";
 
 const AdvancementList = (props) => {
   const [progressInAdvancements, setProgressInAdvancements] = useState(null)
@@ -15,7 +14,7 @@ const AdvancementList = (props) => {
       const advancements = []
       for (const advancementName in progressInAdvancements) {
         advancements.push(
-          <Achievment missingProgress={progressInAdvancements[advancementName]} title={advancementName} />
+          <Advancement missingProgress={progressInAdvancements[advancementName]} title={advancementName} />
         )
       }
       setAdvancements(advancements)
@@ -23,13 +22,14 @@ const AdvancementList = (props) => {
 
   }, [progressInAdvancements])
 
-  return progressInAdvancements == null ? <BlankList /> :
+  return (
     <div>
       {advancements.map((advancement, key) => {
         return <div key={key}> {advancement} </div>
       })
       }
     </div>
+  )
 }
 
 export default AdvancementList;
