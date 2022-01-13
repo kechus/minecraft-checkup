@@ -4,7 +4,7 @@ const Footer = () => {
     <div className='smaller'>
       <p>
         This article uses material from the “Advancement” article on the Minecraft wiki at Fandom and is licensed
-        under the Creative Commons Attribution-Share Alike License.
+        under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported.
       </p>
       <p>
         The app is written using <a href='https://reactjs.org/'>React</a>.

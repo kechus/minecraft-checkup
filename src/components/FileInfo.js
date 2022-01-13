@@ -7,14 +7,12 @@ const FileInfo = () => {
       </p>
       <div>
         The advancements folder is by default located at
-        <p>
-          <div>
-            Windows: <span className="code-like">%appdata%/.minecraft/saves</span>
-          </div>
-          <div>
-            Mac OS:  <span className="code-like">~/Library/Application Support/minecraft/saves</span>
-          </div>
-        </p>
+        <div style={{ marginTop: '1%' }}>
+          Windows:
+          <div className="code-like">%appdata%/.minecraft/saves</div>
+          Mac OS:
+          <div className="code-like">~/Library/Application Support/minecraft/saves</div>
+        </div>
       </div>
     </div>
   );

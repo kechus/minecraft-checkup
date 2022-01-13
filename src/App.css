@@ -32,3 +32,17 @@
 .smaller {
   font-size: small;
 }
+
+.error-message {
+  position: relative;
+  top: 1;
+  background-color: crimson;
+  width: 30%;
+  margin-top: 10px;
+  margin-left: 8px;
+  opacity: 80%;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: lavenderblush;
+  padding: 1em 1em 1em 1em;
+}

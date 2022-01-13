@@ -6,6 +6,7 @@ import AdvancementList from './components/AdvancementList';
 import About from './components/About';
 import FileInfo from './components/FileInfo'
 import Footer from './components/Footer';
+import Error from './components/Error';
 
 function App() {
   const [completedAdvancements, setCompletedAdvancements] = useState({})
@@ -14,6 +15,7 @@ function App() {
     missingProgressInAdvancements,
     setMissingProgressInAdvancements
   ] = useState(null)
+  const [showError, setToggleShowError] = useState(false)
 
   useEffect(() => {
     async function getCompletedAdvancements() {
@@ -28,8 +30,17 @@ function App() {
     if (fileTypeIsJSON(file)) {
       tryParsingFile(file)
     } else {
-      console.error('invalido!')
+      showErrorMessage()
     }
+  }
+
+  function showErrorMessage() {
+    setToggleShowError(true)
+    setTimeout(hideErrorMessage, 3000)
+  }
+
+  function hideErrorMessage() {
+    setToggleShowError(false)
   }
 
   function fileTypeIsJSON(userFile) {
@@ -45,7 +56,7 @@ function App() {
       setUserAdvancements(uploadedAndRemovedAdvancements)
     }
     fileReader.onerror = () => {
-      console.error('error parsing!')
+      console.error('error reading!')
     }
   }
 
@@ -105,6 +116,8 @@ function App() {
       <div className='panel'>
         <Footer />
       </div>
+
+      {showError ? <Error /> : ''}
     </div >
   );
 }
