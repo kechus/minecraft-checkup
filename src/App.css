@@ -34,8 +34,8 @@
 }
 
 .error-message {
-  position: relative;
-  top: 1;
+  position: fixed;
+  bottom: 0;
   background-color: crimson;
   width: 30%;
   margin-top: 10px;

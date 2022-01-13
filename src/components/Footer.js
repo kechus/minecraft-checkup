@@ -8,8 +8,7 @@ const Footer = () => {
       </p>
       <p>
         The app is written using <a href='https://reactjs.org/'>React</a>.
-        It is hosted using Github pages at<a href=''></a>,
-        you can find the source code as well in this Github repo.<a href=''></a>
+        You can find the source in this Github repo.<a href='https://github.com/kechus/Minecraft-Advancement-Checker'>https://github.com/kechus/Minecraft-Advancement-Checker</a>
       </p>
     </div>
   );

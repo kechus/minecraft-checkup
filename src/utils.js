@@ -8,11 +8,11 @@ const ALL_ADVANCEMENTS = [
 ]
 
 const IMAGE_PATHS = {
-  BIOMES: 'https://i.imgur.com/LfkbfIL.png',
-  ENTITIES: 'https://i.imgur.com/x6pz3ea.png',
-  ITEMS: 'https://i.imgur.com/qmQxT12.png',
-  INV: 'https://i.imgur.com/WldiMUV.png',
-  FRAME: 'https://i.imgur.com/KtUu4uK.png',
+  BIOMES: process.env.PUBLIC_URL + '/images/biomes.png',
+  ENTITIES: process.env.PUBLIC_URL + '/images/entities.png',
+  ITEMS: process.env.PUBLIC_URL + '/images/items.png',
+  INV: process.env.PUBLIC_URL + '/images/inv.png',
+  FRAME: process.env.PUBLIC_URL + '/images/trophy.png',
 }
 
 class Advancement {
@@ -38,9 +38,5 @@ const ADVANCEMENTS_NAMES = {
   "minecraft:nether/explore_nether": new Advancement(
     'Hot Tourist Destination', '-416px -128px', IMAGE_PATHS.BIOMES, '/jsons/hot.json'),
 }
-
-
-const IMGUR_ALBUM = 'https://imgur.com/a/hUYxGbF'
-
 
 export { ADVANCEMENTS_NAMES, ALL_ADVANCEMENTS, IMAGE_PATHS }
