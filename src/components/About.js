@@ -3,7 +3,7 @@ import '../App.css'
 const About = () => {
   return (
     <div>
-      <p className='title'>Minecraft advancement checker </p>
+      <p className='title'>Minecraft Advancement Checkup </p>
       <p>
         This website gives you a more detailed rundown of the criteria you are missing to complete Minecraft's advancements that have a progress,
         wich are: "A Balanced Diet", "A Complete Catalogue", "Adventuring Time", "Hot Tourist Destination", "Monsters Hunted" and "Two by Two";
