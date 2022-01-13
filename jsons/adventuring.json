@@ -1,0 +1,202 @@
+{
+  "minecraft:snowy_slopes": {
+    "name": "Snowy Slopes",
+    "positions": "-96px -160px"
+  },
+  "minecraft:old_growth_pine_taiga": {
+    "name": "Old Growth Pine Taiga",
+    "positions": "-64px -16px"
+  },
+  "minecraft:mushroom_fields": {
+    "name": "Mushroom Fields",
+    "positions": "-0px -16px"
+  },
+  "minecraft:taiga": {
+    "name": "Taiga",
+    "positions": "-96px -48px"
+  },
+  "minecraft:deep_ocean": {
+    "name": "Deep Ocean",
+    "positions": "-32px -48px"
+  },
+  "minecraft:eroded_badlands": {
+    "name": "Eroded Badlands",
+    "positions": "-112px -64px"
+  },
+  "minecraft:frozen_river": {
+    "name": "Frozen River",
+    "positions": "-96px -16px"
+  },
+  "minecraft:sunflower_plains": {
+    "name": "Sunflower Plains",
+    "positions": "-0px -64px"
+  },
+  "minecraft:birch_forest": {
+    "name": "Birch Forest",
+    "positions": "-80px -32px"
+  },
+  "minecraft:windswept_hills": {
+    "name": "Windswept Hills",
+    "positions": "-112px -0px"
+  },
+  "minecraft:wooded_badlands": {
+    "name": "Wooded Badlands",
+    "positions": "-96px -64px"
+  },
+  "minecraft:bamboo_jungle": {
+    "name": "Bamboo Jungle",
+    "positions": "-80px -128px"
+  },
+  "minecraft:badlands": {
+    "name": "Badlands",
+    "positions": "-48px -16px"
+  },
+  "minecraft:savanna_plateau": {
+    "name": "Savanna Plateau",
+    "positions": "-32px -96px"
+  },
+  "minecraft:beach": {
+    "name": "Beach",
+    "positions": "-112px -16px"
+  },
+  "minecraft:dark_forest": {
+    "name": "Dark Forest",
+    "positions": "-112px -32px"
+  },
+  "minecraft:stony_peaks": {
+    "name": "Stony Peaks",
+    "positions": "-32px -176px"
+  },
+  "minecraft:sparse_jungle": {
+    "name": "Sparse Jungle",
+    "positions": "-64px -64px"
+  },
+  "minecraft:river": {
+    "name": "River",
+    "positions": "-80px -16px"
+  },
+  "minecraft:lukewarm_ocean": {
+    "name": "Lukewarm Ocean",
+    "positions": "-32px -128px"
+  },
+  "minecraft:stony_shore": {
+    "name": "Stony Shore",
+    "positions": "-0px -48px"
+  },
+  "minecraft:snowy_plains": {
+    "name": "Snowy Plains",
+    "positions": "-80px -0px"
+  },
+  "minecraft:snowy_taiga": {
+    "name": "Snowy Taiga",
+    "positions": "-96px -0px"
+  },
+  "minecraft:dripstone_caves": {
+    "name": "Dripstone Caves",
+    "positions": "-48px -160px"
+  },
+  "minecraft:swamp": {
+    "name": "Swamp",
+    "positions": "-48px -0px"
+  },
+  "minecraft:grove": {
+    "name": "Grove",
+    "positions": "-80px -160px"
+  },
+  "minecraft:jagged_peaks": {
+    "name": "Jagged Peaks",
+    "positions": "-112px -160px"
+  },
+  "minecraft:cold_ocean": {
+    "name": "Cold Ocean",
+    "positions": "-112px -112px"
+  },
+  "minecraft:forest": {
+    "name": "Forest",
+    "positions": "-0px -0px"
+  },
+  "minecraft:lush_caves": {
+    "name": "Lush Caves",
+    "positions": "-16px -176px"
+  },
+  "minecraft:deep_cold_ocean": {
+    "name": "Deep Cold Ocean",
+    "positions": "-0px -128px"
+  },
+  "minecraft:ice_spikes": {
+    "name": "Ice Spikes",
+    "positions": "-0px -80px"
+  },
+  "minecraft:frozen_ocean": {
+    "name": "Frozen Ocean",
+    "positions": "-32px -32px"
+  },
+  "minecraft:desert": {
+    "name": "Desert",
+    "positions": "-16px -0px"
+  },
+  "minecraft:deep_frozen_ocean": {
+    "name": "Deep Frozen Ocean",
+    "positions": "-0px -112px"
+  },
+  "minecraft:windswept_forest": {
+    "name": "Windswept Forest",
+    "positions": "-80px -48px"
+  },
+  "minecraft:ocean": {
+    "name": "Ocean",
+    "positions": "-16px -32px"
+  },
+  "minecraft:jungle": {
+    "name": "Jungle",
+    "positions": "-64px -0px"
+  },
+  "minecraft:old_growth_spruce_taiga": {
+    "name": "Old Growth Spruce Taiga",
+    "positions": "-112px -48px"
+  },
+  "minecraft:snowy_beach": {
+    "name": "Snowy Beach",
+    "positions": "-16px -48px"
+  },
+  "minecraft:windswept_savanna": {
+    "name": "Windswept Savanna",
+    "positions": "-80px -64px"
+  },
+  "minecraft:warm_ocean": {
+    "name": "Warm Ocean",
+    "positions": "-64px -128px"
+  },
+  "minecraft:deep_lukewarm_ocean": {
+    "name": "Deep Lukewarm Ocean",
+    "positions": "-16px -128px"
+  },
+  "minecraft:flower_forest": {
+    "name": "Flower Forest",
+    "positions": "-16px -64px"
+  },
+  "minecraft:frozen_peaks": {
+    "name": "Frozen Peaks",
+    "positions": "-0px -176px"
+  },
+  "minecraft:old_growth_birch_forest": {
+    "name": "Old Growth Birch Forest",
+    "positions": "-32px -64px"
+  },
+  "minecraft:meadow": {
+    "name": "Meadow",
+    "positions": "-64px -160px"
+  },
+  "minecraft:windswept_gravelly_hills": {
+    "name": "Windswept Gravelly Hills",
+    "positions": "-48px -80px"
+  },
+  "minecraft:savanna": {
+    "name": "Savanna",
+    "positions": "-96px -32px"
+  },
+  "minecraft:plains": {
+    "name": "Plains",
+    "positions": "-32px -0px"
+  }
+}
