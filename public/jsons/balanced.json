@@ -129,11 +129,11 @@
   },
   "chicken":{
     "name": "Raw Chicken",
-    "positions" : "-80px -480px"
+    "positions" : "-176px -480px"
   },
   "beef":{
     "name": "Raw Beef",
-    "positions" : "-176px -480px"
+    "positions" : "-80px -480px"
   },
   "cod":{
     "name": "Raw Cod",
