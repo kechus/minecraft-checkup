@@ -5,4 +5,6 @@ It uses a file located in your world save folder and compares it to one that alr
 
 This website only works with the Java version of the game
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V41FOJ8I)
+
 https://kechus.github.io/minecraft-checkup/
